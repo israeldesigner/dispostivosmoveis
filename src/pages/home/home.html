@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Previsão do tempo</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h3>Previsão do Tempo</h3>
+
+  <ion-list inset>
+    <button ion-item *ngFor="let item of items" (click)="itemSelected(item)">
+      <ion-grid>
+          <ion-row>
+            <ion-col>
+                <ion-icon [name]="item.icone"  item-start class="icon-prev"></ion-icon>
+            </ion-col>
+            <ion-col col-6>
+                {{ item.dia }} <br> {{item.clima}}
+            </ion-col>
+            <ion-col>
+                Max: {{item.tempMax}}º <br>
+                Min: {{item.tempMin}}º
+            </ion-col>
+          </ion-row>
+      </ion-grid>
+    </button>
+  </ion-list>
+  <button ion-button color="secondary" outline menuToggle text-uppercase>Menu</button>
+</ion-content>
